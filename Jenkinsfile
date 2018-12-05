@@ -1,8 +1,6 @@
 // Dummy Jenkinsfile to get Jenkins pipeline up and running
 // Will be updated once there is something to build
 
-#!groovy
-
 stage('Checkout') {
     checkout('scm')
 }
