@@ -2,7 +2,9 @@
 // Will be updated once there is something to build
 
 stage('Checkout') {
-    checkout('scm')
+  node {
+    checkout scm
+  }
 }
 
 
