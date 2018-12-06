@@ -7,19 +7,25 @@ stage('Checkout') {
   }
 }
 
-
+// TODO: Install PhantomJS and GhostDriver on the node that will run tests when framework tests are written
 stage('Pre-build') {
     node {
         echo "Node Name: ${env.NODE_NAME}"
         echo "Branch name: ${env.BRANCH_NAME}"
-        echo "Git Commit: ${env.GIT_COMMIT}"
-        echo "Git Previous Commit: ${env.GIT_PREVIOUS_COMMIT}"
-        echo "Git Previous Successful Commit: ${env.GIT_PREVIOUS_SUCCESSFUL_COMMIT}"
+        echo "Installing dependencies"
+        sh 'pip3.6 install --user -r requirements.txt'
     }
 }
 
 stage('Build') {
     node {
         echo 'Jenkins pipeline is working!'
+    }
+}
+
+stage('Test') {
+    node {
+        echo 'Running tests'
+        sh 'py.test-3 tests'
     }
 }
