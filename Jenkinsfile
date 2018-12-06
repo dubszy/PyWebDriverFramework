@@ -13,7 +13,7 @@ stage('Pre-build') {
         echo "Node Name: ${env.NODE_NAME}"
         echo "Branch name: ${env.BRANCH_NAME}"
         echo "Installing dependencies"
-        sh 'pip3.6 install -r requirements.txt'
+        sh 'pip3.6 install --user -r requirements.txt'
     }
 }
 
