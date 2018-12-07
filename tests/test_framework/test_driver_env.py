@@ -6,6 +6,8 @@ import sys
 
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
+import wdframework
+
 
 def test_go_to_url():
     driver_env = wdframework.DriverEnvironment("phantomjs")
