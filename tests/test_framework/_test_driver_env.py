@@ -10,6 +10,10 @@ import wdframework
 
 
 def test_go_to_url():
-    driver_env = wdframework.DriverEnvironment("phantomjs")
+    driver_env = wdframework.DriverEnvironment("chrome")
     driver_env.go_to_url("http://www.google.com")
     assert "Google" in driver_env.get_driver().title
+
+
+if __name__ == '__main__':
+    test_go_to_url()
