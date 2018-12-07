@@ -154,7 +154,7 @@ class DriverEnvironment:
         """
         if self._closed:
             raise DriverEnvironmentException("The DriverEnvironment is closed")
-        if self.started and self.driver is None:
+        if self._started and self._driver is None:
             raise DriverEnvironmentException(
                 "There is no driver for this session. Either the driver was "
                 "not set, or the Session is closed")
@@ -227,11 +227,11 @@ class DriverEnvironment:
 
         :return: New instance of the type of driver specified by browser_string
         """
-        if not self.started:
+        if not self._started:
             # Sanity check to make sure we're not abandoning an open stream
-            if self.driver is not None and not self._closed:
-                self.driver.quit()
-            self.started = True
-            self.driver = self._BrowserSwitch()\
+            if self._driver is not None and not self._closed:
+                self._driver.quit()
+            self._started = True
+            self._driver = self._BrowserSwitch()\
                 .string_to_browser(self._browser_string)
-        return self.driver
+        return self._driver
