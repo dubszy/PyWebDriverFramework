@@ -124,7 +124,9 @@ class DriverEnvironment:
 
             :return: A new instance of the PhantomJS WebDriver
             """
-            return webdriver.PhantomJS()
+            # Explicitly declaring this for now because Jenkins can't find
+            # phantomjs for some unknown reason
+            return webdriver.PhantomJS("/usr/local/bin/phantomjs")
 
         @staticmethod
         def safari():
