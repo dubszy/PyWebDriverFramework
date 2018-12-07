@@ -1,3 +1,11 @@
+class SessionException(Exception):
+    pass
+
+
+class StoreException(Exception):
+    pass
+
+
 class DriverEnvironmentException(Exception):
 
     def __init__(self, message):
