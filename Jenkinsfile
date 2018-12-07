@@ -14,6 +14,7 @@ stage('Pre-build') {
         echo "Branch name: ${env.BRANCH_NAME}"
         echo "Installing dependencies"
         sh 'pip3.6 install --user -r requirements.txt'
+        sh 'which phantomjs'
     }
 }
 
