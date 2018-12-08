@@ -1,3 +1,7 @@
+class DriverEnvironmentException(Exception):
+    pass
+
+
 class SessionException(Exception):
     pass
 
@@ -6,8 +10,7 @@ class StoreException(Exception):
     pass
 
 
-class DriverEnvironmentException(Exception):
-
+class TimeoutException(Exception):
     def __init__(self, message):
         self.message = message
 
