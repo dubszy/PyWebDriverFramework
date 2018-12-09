@@ -1,3 +1,7 @@
+class ComponentException(Exception):
+    pass
+
+
 class DriverEnvironmentException(Exception):
     pass
 

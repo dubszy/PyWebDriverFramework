@@ -3,7 +3,6 @@
 
 import os
 import sys
-import time
 
 from selenium.webdriver.support import expected_conditions as ExpectedCondition
 

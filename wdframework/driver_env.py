@@ -198,7 +198,7 @@ class DriverEnvironment:
             raise WebDriverException("".join(message), e.screen, e.stacktrace)
 
     # Note that 'async' is a reserved word in Python 3.7+
-    def execute_js(self, asynchronous: bool, js: str, args):
+    def execute_js(self, asynchronous: bool, js: str, args=None):
         """
         Execute arbitrary JavaScript in the current window or frame. Note that
         this method can potentially invalidate the results of tests because it
