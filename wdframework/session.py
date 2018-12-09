@@ -2,6 +2,7 @@ from .driver_env import DriverEnvironment
 from .exceptions import SessionException
 from .store import Store
 
+
 class Session:
     """
     Creates, configures, stores, and maintains the environment and data for a
