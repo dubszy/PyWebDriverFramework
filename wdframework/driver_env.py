@@ -234,7 +234,6 @@ class DriverEnvironment:
             self._started = True
             self._driver = self._BrowserSwitch()\
                 .string_to_browser(self._browser_string)
-            self._driver.implicitly_wait(0.5)
         return self._driver
 
     def close(self):
