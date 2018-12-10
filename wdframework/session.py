@@ -35,6 +35,11 @@ class Session:
         self._driver_env.go_to_url(self._host)
 
     def get_store(self):
+        """
+        Get the Store associated with this Session.
+
+        :return: The Store associated with this Session
+        """
         if self.__closed:
             raise SessionException("This Session has been closed")
         if self._store is None:
@@ -42,6 +47,11 @@ class Session:
         return self._store
 
     def get_host(self):
+        """
+        Get the host associated with this Session.
+
+        :return: The host associated with this Session.
+        """
         if self.__closed:
             raise SessionException("This Session has been closed")
         if self._host is "" or None:
@@ -49,6 +59,11 @@ class Session:
         return self._host
 
     def get_driver_env(self) -> DriverEnvironment:
+        """
+        Get the DriverEnvironment associated with this Session.
+
+        :return: The DriverEnvironment associated with this Session.
+        """
         if self.__closed:
             raise SessionException("This Session has been closed")
         if self._driver_env is None:
@@ -62,5 +77,8 @@ class Session:
         return self._driver_env
 
     def close(self):
+        """
+        Close this Session. (Closes the DriverEnvironment and quits WebDriver.)
+        """
         self.__closed = True
         self._driver_env.close()

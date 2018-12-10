@@ -182,7 +182,10 @@ class Selector(object):
 
         :return: The visible text
         """
-        return self.get().text
+        text = self.get().text
+        if text is None or text is '':
+            text = self.get().get_attribute("value")
+        return text
 
     def get_location(self):
         """
