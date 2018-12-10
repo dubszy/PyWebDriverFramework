@@ -1,5 +1,5 @@
 from .loadable import Loadable
-from wdframework.session import Session
+from ..session import Session
 
 
 class Page(Loadable):

@@ -1,6 +1,6 @@
 from .loadable import Loadable
-from wdframework.exceptions import ComponentException
-from wdframework.selector import Selector
+from ..exceptions import ComponentException
+from ..selector import Selector
 
 
 class Component(Loadable):
