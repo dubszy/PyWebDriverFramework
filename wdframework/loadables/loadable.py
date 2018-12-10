@@ -1,5 +1,4 @@
-from wdframework.session import Session
-
+from ..session import Session
 
 class Loadable(object):
     """
